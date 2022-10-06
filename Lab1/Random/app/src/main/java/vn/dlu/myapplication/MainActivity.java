@@ -10,8 +10,8 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    TextView txtKq;
-    Button btnRand;
+    TextView txtNumber;
+    Button btnRandom;
 
     @Override
 
@@ -22,15 +22,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initControl() {
-        txtKq.findViewById(R.id.txtKetQua);
-        btnRand.findViewById(R.id.btnRandom);
-        btnRand.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Random random = new Random();
-                int rand = random.nextInt(6-1)+1;
-                txtKq.setText(String.valueOf(rand));
-            }
-        });
+        txtNumber = (TextView) findViewById(R.id.txtNumber);
+        btnRandom = (Button) findViewById(R.id.btnRandom);
+       btnRandom.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Random rand = new Random();
+               int randNumber = rand.nextInt(100);
+               txtNumber.setText(String.valueOf(randNumber));
+           }
+       });
     }
 }
