@@ -20,13 +20,12 @@
 
     <Button
         android:id="@+id/btnRandom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="94dp"
+        android:layout_width="362dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="200dp"
         android:text="RANDOM"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNumber" />
 
