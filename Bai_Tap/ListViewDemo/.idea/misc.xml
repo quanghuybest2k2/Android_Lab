@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android/Android_Lab/Lab1/SendSMS/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Android/ListViewDemo/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/ListViewDemo/app/src/main/res/layout/mylist.xml" value="0.20416666666666666" />
+        <entry key="..\:/_Subject/CaoDang/ListViewDemo/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/_Subject/CaoDang/ListViewDemo/app/src/main/res/layout/mylist.xml" value="0.22" />
       </map>
     </option>
   </component>
