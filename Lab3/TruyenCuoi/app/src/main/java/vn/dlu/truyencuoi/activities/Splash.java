@@ -1,4 +1,5 @@
-package vn.dlu.truyencuoi;
+package vn.dlu.truyencuoi.activities;
+
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,18 +9,20 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import vn.dlu.truyencuoi.R;
 
-public class M000SplashFrg extends Fragment {
+public class Splash extends Fragment {
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         initViews();
-        return inflater.inflate(R.layout.m000_frg_splash, container, false);
+        return inflater.inflate(R.layout.splash, container, false);
     }
 
     private void initViews() {
-        new Handler().postDelayed(this::gotoM001Screen, 2000);
+        new Handler().postDelayed(this::gotoNextScreen, 2000);
     }
 
-    private void gotoM001Screen() {
-        ((MainActivity) getActivity()).gotoM001Screen();
+    private void gotoNextScreen() {
+        ((MainActivity) getActivity()).hideFragment();
     }
 }
