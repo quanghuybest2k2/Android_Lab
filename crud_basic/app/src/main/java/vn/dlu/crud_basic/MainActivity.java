@@ -27,7 +27,39 @@ public class MainActivity extends AppCompatActivity {
     private void Init() {
         TextView name = (TextView) findViewById(R.id.editTextName);
         TextView address = (TextView) findViewById(R.id.editTextAddress);
+        TextView TextNameSearch = (TextView) findViewById(R.id.editTextSearch);
+        Button btnSearch = (Button) findViewById(R.id.btnTimKiem);
         Button btnInsert = (Button) findViewById(R.id.btnAdd);
+        Button btnUpdate = (Button) findViewById(R.id.btnUpdate);
+        Button btnDelete = (Button) findViewById(R.id.btnDelete);
+        // Search Data
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Connection connection = connectionclass();
+                try {
+                    if (connection != null) {
+                        String sqlinsert = "SELECT * FROM UserInfo_Tab WHERE Name LIKE N'%" + TextNameSearch.getText().toString() + "'";
+                        Statement st = connection.createStatement();
+                        ResultSet rs = st.executeQuery(sqlinsert);
+                        while (rs.next()) {
+                            name.setText(rs.getString(2));
+                            address.setText(rs.getString(3));
+                        }
+                    }
+                } catch (Exception exception) {
+                    Log.e("Error", exception.getMessage());
+                }
+            }
+        });
+        // update record
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        //add record
         btnInsert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,6 +75,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        // remove record
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
     @SuppressLint("NewApi")
@@ -52,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         StrictMode.setThreadPolicy(tp);
         try {
             Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            String connectionUrl = "jdbc:jtds:sqlserver://192.168.71.96:1433;databasename=EnglishDictionary;user=sa;password=1";
+            String connectionUrl = "jdbc:jtds:sqlserver://192.168.104.96:1433;databasename=EnglishDictionary;user=sa;password=1";
             con = DriverManager.getConnection(connectionUrl);
             Log.i("Thongbao", "Thanh cong");
         } catch (Exception e) {
